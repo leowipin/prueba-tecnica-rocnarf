@@ -1,0 +1,19 @@
+{
+  "name": "gestion-de-tareas",
+  "version": "1.0.0",
+  "description": "Backend para la gestión de tareas",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app",
+    "dev": "tsx watch src/app.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  }
+}

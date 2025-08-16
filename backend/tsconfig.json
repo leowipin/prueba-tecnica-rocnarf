@@ -4,7 +4,10 @@
     "module": "NodeNext",
     "outDir": "./dist",
     "strict": true,
-    "moduleResolution": "NodeNext"
+    "moduleResolution": "NodeNext",
+    // Habilita el uso de decoradores experimentales
+    "experimentalDecorators": true,  
+    "emitDecoratorMetadata": true, 
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"],

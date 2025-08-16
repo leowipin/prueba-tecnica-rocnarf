@@ -1,13 +1,30 @@
+process.env.TZ = 'UTC';
+
 import express from 'express'
+import 'dotenv/config';
+import { AppDataSource } from './config/data-source';
+import authRoutes from './routes/auth.routes';
+import { errorHandlerMiddleware } from './middlewares/error-handler.middleware';
 
 const app = express();
 
+// middlewares
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-})
+app.use('/api/auth', authRoutes);
 
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000')
+app.use(errorHandlerMiddleware);
+
+// inicializacion del servidor y DB
+const PORT = process.env.PORT || 3000;
+AppDataSource.initialize()
+.then(() => {
+  console.log("DataSource initialized successfully");
+
+  app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+  });
 })
+.catch((err) => {
+  console.error("Error during DataSource initialization:", err);
+});

@@ -1,6 +1,5 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import "reflect-metadata";
-import "dotenv/config";
 
 const dataSourceOptions: DataSourceOptions = {
     type: "postgres",

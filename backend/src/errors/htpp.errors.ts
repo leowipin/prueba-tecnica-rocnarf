@@ -30,7 +30,7 @@ export class ConflictError extends HttpError {
 }
 
 export class UnauthorizedError extends HttpError {
-    constructor(message: string = 'No autorizado') {
+    constructor(message: string = 'Credenciales inválidas') {
         super(401, 'No Autorizado', message);
     }
 }

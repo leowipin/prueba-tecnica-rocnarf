@@ -1,7 +1,8 @@
+import 'dotenv/config';
+
 process.env.TZ = 'UTC';
 
 import express from 'express'
-import 'dotenv/config';
 import { AppDataSource } from './config/data-source';
 import authRoutes from './routes/auth.routes';
 import { errorHandlerMiddleware } from './middlewares/error-handler.middleware';

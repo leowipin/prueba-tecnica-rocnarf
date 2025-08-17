@@ -2,9 +2,13 @@ import { plainToInstance } from 'class-transformer';
 import { validate, ValidationError } from 'class-validator';
 import { Request, Response, NextFunction } from 'express';
 
-export const validationMiddleware = (dtoClass: any) => {
+export const validationMiddleware = (
+    dtoClass: any,
+    source: 'body' | 'params' | 'query' = 'body'
+    ) => {
     return async (req: Request, res: Response, next: NextFunction) => {
-        const dtoInstance = plainToInstance(dtoClass, req.body);
+        const dataToValidate = req[source];
+        const dtoInstance = plainToInstance(dtoClass, dataToValidate);
 
         const errors: ValidationError[] = await validate(dtoInstance);
 
@@ -17,7 +21,10 @@ export const validationMiddleware = (dtoClass: any) => {
             return res.status(400).json({ title: title, description: description, errors: messages });
         }
         
-        req.body = dtoInstance;
+        if (source === 'body') {
+            req.body = dtoInstance;
+        }
+        
         next();
     };
 };

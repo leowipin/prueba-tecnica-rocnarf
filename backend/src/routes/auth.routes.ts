@@ -5,7 +5,6 @@ import { RegisterDto } from '../dtos/auth/register.dto';
 import { asyncHandler } from '../utils/async-handler';
 import { LoginUserDto } from '../dtos/auth/login.dto';
 
-
 const router = Router();
 const authController = new AuthController();
 

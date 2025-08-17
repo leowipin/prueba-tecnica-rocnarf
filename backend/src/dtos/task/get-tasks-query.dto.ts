@@ -1,12 +1,12 @@
-import { IsOptional, IsEnum, IsDateString } from 'class-validator';
+import { IsEnum, IsOptional, IsDateString } from 'class-validator';
 import { TaskStatus } from '../../models/task.model';
 
 export class GetTasksQueryDto {
-    @IsEnum(TaskStatus, { message: 'El estado para filtrar no es válido.' })
     @IsOptional()
+    @IsEnum(TaskStatus, { message: 'El estado debe ser uno de los valores permitidos: pendiente, en progreso, completada.' })
     status?: TaskStatus;
 
-    @IsDateString({}, { message: 'La fecha de vencimiento para filtrar debe ser una fecha válida.' })
     @IsOptional()
+    @IsDateString({}, { message: 'La fecha de vencimiento debe ser una fecha válida en formato YYYY-MM-DD.' })
     dueDate?: string;
 }

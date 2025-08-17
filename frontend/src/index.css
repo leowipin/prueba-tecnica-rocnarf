@@ -3,7 +3,7 @@
 @theme {
   --color-surface: rgb(255, 250, 255);
   --color-surface-2: rgb(241 245 249);
-  --color-surface-3: rgb(209, 213, 218);
+  --color-surface-3: rgb(174, 212, 255);
   --color-fg: rgb(22, 22, 22);
   --color-fg-muted: rgb(109, 109, 109);
   --color-fg-muted-2: rgb(138, 138, 138);
@@ -31,7 +31,7 @@
 .dark {
   --color-surface: rgb(255, 250, 255);
   --color-surface-2: rgb(241 245 249);
-  --color-surface-3: rgb(209, 213, 218);
+  --color-surface-3: rgb(174, 212, 255);
   --color-fg: rgb(22, 22, 22);
   --color-fg-muted: rgb(109, 109, 109);
   --color-fg-muted-2: rgb(138, 138, 138);

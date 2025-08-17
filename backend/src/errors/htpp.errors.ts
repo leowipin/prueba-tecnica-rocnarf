@@ -34,3 +34,9 @@ export class UnauthorizedError extends HttpError {
         super(401, 'No Autorizado', message);
     }
 }
+
+export class ForbiddenError extends HttpError {
+    constructor(message = 'No tienes permiso para acceder a este recurso.') {
+        super(403, 'Acceso Denegado', message);
+    }
+}

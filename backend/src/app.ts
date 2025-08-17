@@ -6,6 +6,8 @@ import express from 'express'
 import cors from 'cors';
 import { AppDataSource } from './config/data-source';
 import authRoutes from './routes/auth.routes';
+import userRoutes from './routes/user.routes';
+import taskRoutes from './routes/task.routes';
 import { errorHandlerMiddleware } from './middlewares/error-handler.middleware';
 
 const app = express();
@@ -23,6 +25,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/tasks', taskRoutes);
 
 app.use(errorHandlerMiddleware);
 

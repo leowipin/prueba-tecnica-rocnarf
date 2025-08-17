@@ -65,7 +65,8 @@ export class AuthService {
 
         const payload = { 
             id: user.id, 
-            role: user.role 
+            role: user.role,
+            username: user.username
         };
 
         if (!process.env.JWT_SECRET) {

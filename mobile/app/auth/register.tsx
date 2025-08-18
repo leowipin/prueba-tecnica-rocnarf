@@ -9,7 +9,7 @@ const RegisterPage: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>Registro works</Text>
+        <Text style={styles.title}>Registro en web</Text>
         
         <View style={styles.buttonContainer}>
           <BaseButton

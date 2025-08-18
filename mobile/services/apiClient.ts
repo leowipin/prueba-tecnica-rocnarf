@@ -82,7 +82,7 @@ class ApiClient {
           // La petición fue hecha pero no se recibió respuesta
           console.error('No response received:', error.request);
           throw new ApiError(
-            'No se pudo conectar con el servidor. Verifica que esté corriendo en ' + API_BASE_URL,
+            'No se pudo conectar con el servidor',
             0,
             'Connection Error'
           );

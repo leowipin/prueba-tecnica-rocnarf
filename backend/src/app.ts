@@ -13,14 +13,14 @@ import { errorHandlerMiddleware } from './middlewares/error-handler.middleware';
 const app = express();
 
 // cors
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: process.env.FRONTEND_URL,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+//   credentials: true,
+// };
 
 // middlewares
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
